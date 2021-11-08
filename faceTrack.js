@@ -7,10 +7,11 @@ var ctrack = new clm.tracker();
 ctrack.init(pModel);
 var trackingStarted = false;
 
-// document.getElementById('selectmask').addEventListener('change', updateMask, false);
+document.getElementById('selectmask').addEventListener('change', updateMask, false);
 
 function updateMask(el) {
-    //currentMask = parseInt(el.target.value, 10);
+    currentMask = parseInt(el.target.value, 10);
+    // console.log(currentMask)
 
     switchMasks();
 }
@@ -51,7 +52,7 @@ function drawGridLoop() {
 function switchMasks() {
     // get mask
     var maskname = Object.keys(masks)[currentMask];
-    fd.load(document.getElementById('acne'), masks['acne'], pModel);
+    fd.load(document.getElementById(maskname), masks[maskname], pModel);
 }
 
 function drawMaskLoop() {
